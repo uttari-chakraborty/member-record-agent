@@ -1,0 +1,88 @@
+{
+  "case_id": "H01",
+  "category": "heldout",
+  "systems": {
+    "agency": {
+      "member_id": "M40000041",
+      "ssn": "941-27-2517",
+      "dob": "1977-02-09",
+      "first_name": "Maya",
+      "middle_name": "",
+      "last_name": "Ortiz",
+      "address": {
+        "line1": "141 Maple Street",
+        "city": "Riverton",
+        "state": "CS",
+        "zip": "98001"
+      },
+      "phone": "(555) 010-1041",
+      "email": "maya.ortiz41@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-12-31",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Cascadia Health Coverage Program",
+      "household_income": 41250,
+      "diagnosis": "not recorded"
+    },
+    "insurer": {
+      "member_id": "M40000041",
+      "ssn": "941-27-2517",
+      "dob": "1977-02-09",
+      "first_name": "Maya",
+      "middle_name": "",
+      "last_name": "Ortiz",
+      "address": {
+        "line1": "141 Maple Street",
+        "city": "Riverton",
+        "state": "CS",
+        "zip": "98001"
+      },
+      "phone": "(555) 010-1041",
+      "email": "maya.ortiz41@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-12-31",
+      "eligibility_status": "active",
+      "coverage_type": "dependent",
+      "primary_payer": "Employer plan: Northgate Freight (former spouse, continued through COBRA)",
+      "household_income": 41250,
+      "diagnosis": "not recorded"
+    },
+    "payment_vendor": {
+      "member_id": "M40000041",
+      "ssn": "941-27-2517",
+      "dob": "1977-02-09",
+      "first_name": "Maya",
+      "middle_name": "",
+      "last_name": "Ortiz",
+      "address": {
+        "line1": "141 Maple Street",
+        "city": "Riverton",
+        "state": "CS",
+        "zip": "98001"
+      },
+      "phone": "(555) 010-1041",
+      "email": "maya.ortiz41@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-12-31",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Cascadia Health Coverage Program",
+      "household_income": 41250,
+      "diagnosis": "not recorded"
+    }
+  },
+  "notes": [
+    {
+      "date": "2026-03-18",
+      "source": "agency call center",
+      "text": "Member reports divorce finalized in March."
+    },
+    {
+      "date": "2026-04-02",
+      "source": "insurer",
+      "text": "Member elected COBRA continuation on former spouse's employer plan."
+    }
+  ],
+  "ongoing_treatment": true
+}

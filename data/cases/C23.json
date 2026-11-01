@@ -1,0 +1,83 @@
+{
+  "case_id": "C23",
+  "category": "job_loss",
+  "systems": {
+    "agency": {
+      "member_id": "M40000023",
+      "ssn": "923-81-1851",
+      "dob": "1974-01-25",
+      "first_name": "Ivan",
+      "middle_name": "",
+      "last_name": "Petrov",
+      "address": {
+        "line1": "123 Maple Street",
+        "city": "Riverton",
+        "state": "CS",
+        "zip": "98001"
+      },
+      "phone": "(555) 010-1023",
+      "email": "ivan.petrov23@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-12-31",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Cascadia Health Coverage Program",
+      "household_income": 36750,
+      "diagnosis": "not recorded"
+    },
+    "insurer": {
+      "member_id": "M40000023",
+      "ssn": "923-81-1851",
+      "dob": "1974-01-25",
+      "first_name": "Ivan",
+      "middle_name": "",
+      "last_name": "Petrov",
+      "address": {
+        "line1": "123 Maple Street",
+        "city": "Riverton",
+        "state": "CS",
+        "zip": "98001"
+      },
+      "phone": "(555) 010-1023",
+      "email": "ivan.petrov23@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-12-31",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Cascadia Health Coverage Program",
+      "household_income": 36750,
+      "diagnosis": "not recorded"
+    },
+    "payment_vendor": {
+      "member_id": "M40000023",
+      "ssn": "923-81-1851",
+      "dob": "1974-01-25",
+      "first_name": "Ivan",
+      "middle_name": "",
+      "last_name": "Petrov",
+      "address": {
+        "line1": "123 Maple Street",
+        "city": "Riverton",
+        "state": "CS",
+        "zip": "98001"
+      },
+      "phone": "(555) 010-1023",
+      "email": "ivan.petrov23@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-12-31",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Employer plan: Summit Tools",
+      "household_income": 36750,
+      "diagnosis": "not recorded"
+    }
+  },
+  "notes": [
+    {
+      "date": "2026-01-20",
+      "source": "agency call center",
+      "text": "Member says his job ended in December."
+    }
+  ],
+  "ongoing_treatment": false
+}

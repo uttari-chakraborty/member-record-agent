@@ -1,0 +1,84 @@
+{
+  "case_id": "H06",
+  "category": "heldout",
+  "systems": {
+    "agency": {
+      "member_id": "M40000046",
+      "ssn": "946-62-2702",
+      "dob": "1961-11-20",
+      "first_name": "Walter",
+      "middle_name": "",
+      "last_name": "Brennan",
+      "address": {
+        "line1": "146 Maple Street",
+        "city": "Riverton",
+        "state": "CS",
+        "zip": "98001"
+      },
+      "phone": "(555) 010-1046",
+      "email": "walter.brennan46@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-12-31",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Cascadia Health Coverage Program",
+      "household_income": 42500,
+      "diagnosis": "not recorded"
+    },
+    "insurer": {
+      "member_id": "M40000046",
+      "ssn": "946-62-2702",
+      "dob": "1961-11-20",
+      "first_name": "Walter",
+      "middle_name": "",
+      "last_name": "Brennan",
+      "address": {
+        "line1": "146 Maple Street",
+        "city": "Riverton",
+        "state": "CS",
+        "zip": "98001"
+      },
+      "phone": "(555) 010-1046",
+      "email": "walter.brennan46@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-12-31",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Medicare (effective 2026-12-01)",
+      "household_income": 42500,
+      "diagnosis": "not recorded"
+    },
+    "payment_vendor": {
+      "member_id": "M40000046",
+      "ssn": "946-62-2702",
+      "dob": "1961-11-20",
+      "first_name": "Walter",
+      "middle_name": "",
+      "last_name": "Brennan",
+      "address": {
+        "line1": "146 Maple Street",
+        "city": "Riverton",
+        "state": "CS",
+        "zip": "98001"
+      },
+      "phone": "(555) 010-1046",
+      "email": "walter.brennan46@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-12-31",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Cascadia Health Coverage Program",
+      "household_income": 42500,
+      "diagnosis": "not recorded",
+      "payment_history": "Claims since 2026-10-01 sent to Medicare and rejected: Medicare not yet effective"
+    }
+  },
+  "notes": [
+    {
+      "date": "2026-10-20",
+      "source": "agency call center",
+      "text": "Member's Medicare enrollment is approved, effective 2026-12-01. He asks that claims stop being sent to Medicare before then."
+    }
+  ],
+  "ongoing_treatment": true
+}

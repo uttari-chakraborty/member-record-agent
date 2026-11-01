@@ -1,0 +1,83 @@
+{
+  "case_id": "C15",
+  "category": "coverage_dates",
+  "systems": {
+    "agency": {
+      "member_id": "M40000015",
+      "ssn": "915-25-1555",
+      "dob": "1956-09-27",
+      "first_name": "Rita",
+      "middle_name": "",
+      "last_name": "Alvarez",
+      "address": {
+        "line1": "115 Maple Street",
+        "city": "Riverton",
+        "state": "CS",
+        "zip": "98001"
+      },
+      "phone": "(555) 010-1015",
+      "email": "rita.alvarez15@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": null,
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Cascadia Health Coverage Program",
+      "household_income": 34750,
+      "diagnosis": "not recorded"
+    },
+    "insurer": {
+      "member_id": "M40000015",
+      "ssn": "915-25-1555",
+      "dob": "1956-09-27",
+      "first_name": "Rita",
+      "middle_name": "",
+      "last_name": "Alvarez",
+      "address": {
+        "line1": "115 Maple Street",
+        "city": "Riverton",
+        "state": "CS",
+        "zip": "98001"
+      },
+      "phone": "(555) 010-1015",
+      "email": "rita.alvarez15@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-09-30",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Cascadia Health Coverage Program",
+      "household_income": 34750,
+      "diagnosis": "not recorded"
+    },
+    "payment_vendor": {
+      "member_id": "M40000015",
+      "ssn": "915-25-1555",
+      "dob": "1956-09-27",
+      "first_name": "Rita",
+      "middle_name": "",
+      "last_name": "Alvarez",
+      "address": {
+        "line1": "115 Maple Street",
+        "city": "Riverton",
+        "state": "CS",
+        "zip": "98001"
+      },
+      "phone": "(555) 010-1015",
+      "email": "rita.alvarez15@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-12-31",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Cascadia Health Coverage Program",
+      "household_income": 34750,
+      "diagnosis": "not recorded"
+    }
+  },
+  "notes": [
+    {
+      "date": "2026-08-01",
+      "source": "clinic liaison",
+      "text": "Member is in ongoing treatment with clinic visits three times a week."
+    }
+  ],
+  "ongoing_treatment": true
+}

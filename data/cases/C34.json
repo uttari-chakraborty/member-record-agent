@@ -1,0 +1,83 @@
+{
+  "case_id": "C34",
+  "category": "policy_version",
+  "systems": {
+    "agency": {
+      "member_id": "M40000034",
+      "ssn": "934-68-2258",
+      "dob": "1980-05-30",
+      "first_name": "Hana",
+      "middle_name": "",
+      "last_name": "Ivers",
+      "address": {
+        "line1": "134 Maple Street",
+        "city": "Riverton",
+        "state": "CS",
+        "zip": "98001"
+      },
+      "phone": "(555) 010-1034",
+      "email": "hana.ivers34@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-12-31",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Cascadia Health Coverage Program",
+      "household_income": 39500,
+      "diagnosis": "not recorded"
+    },
+    "insurer": {
+      "member_id": "M40000034",
+      "ssn": "934-68-2258",
+      "dob": "1980-05-30",
+      "first_name": "Hana",
+      "middle_name": "",
+      "last_name": "Ivers",
+      "address": {
+        "line1": "7 Lantern Row",
+        "city": "Fairview",
+        "state": "CS",
+        "zip": "98022"
+      },
+      "phone": "(555) 010-1034",
+      "email": "hana.ivers34@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-12-31",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Cascadia Health Coverage Program",
+      "household_income": 39500,
+      "diagnosis": "not recorded"
+    },
+    "payment_vendor": {
+      "member_id": "M40000034",
+      "ssn": "934-68-2258",
+      "dob": "1980-05-30",
+      "first_name": "Hana",
+      "middle_name": "",
+      "last_name": "Ivers",
+      "address": {
+        "line1": "134 Maple Street",
+        "city": "Riverton",
+        "state": "CS",
+        "zip": "98001"
+      },
+      "phone": "(555) 010-1034",
+      "email": "hana.ivers34@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-12-31",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Cascadia Health Coverage Program",
+      "household_income": 39500,
+      "diagnosis": "not recorded"
+    }
+  },
+  "notes": [
+    {
+      "date": "2026-02-15",
+      "source": "insurer portal",
+      "text": "Member updated mailing address to 7 Lantern Row, Fairview through the insurer portal."
+    }
+  ],
+  "ongoing_treatment": false
+}

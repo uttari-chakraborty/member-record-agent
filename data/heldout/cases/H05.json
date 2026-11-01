@@ -1,0 +1,84 @@
+{
+  "case_id": "H05",
+  "category": "heldout",
+  "systems": {
+    "agency": {
+      "member_id": "M40000045",
+      "ssn": "945-55-2665",
+      "dob": "1990-03-12",
+      "first_name": "Jennifer",
+      "middle_name": "",
+      "last_name": "Singer",
+      "address": {
+        "line1": "145 Maple Street",
+        "city": "Riverton",
+        "state": "CS",
+        "zip": "98001"
+      },
+      "phone": "(555) 010-1045",
+      "email": "jennifer.singer45@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-12-31",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Cascadia Health Coverage Program",
+      "household_income": 42250,
+      "diagnosis": "not recorded"
+    },
+    "insurer": {
+      "member_id": "M40000045",
+      "ssn": "945-55-2665",
+      "dob": "1990-03-12",
+      "first_name": "Jenny",
+      "middle_name": "",
+      "last_name": "Singer",
+      "address": {
+        "line1": "145 Maple Street",
+        "city": "Riverton",
+        "state": "CS",
+        "zip": "98001"
+      },
+      "phone": "(555) 010-1045",
+      "email": "jennifer.singer45@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-12-31",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Cascadia Health Coverage Program",
+      "household_income": 42250,
+      "diagnosis": "not recorded"
+    },
+    "payment_vendor": {
+      "member_id": "M40000045",
+      "ssn": "945-55-2665",
+      "dob": "1990-03-12",
+      "first_name": "Jennifer",
+      "middle_name": "",
+      "last_name": "Singer",
+      "address": {
+        "line1": "145 Maple Street",
+        "city": "Riverton",
+        "state": "CS",
+        "zip": "98001"
+      },
+      "phone": "(555) 010-1045",
+      "email": "jennifer.singer45@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-12-31",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Cascadia Health Coverage Program",
+      "household_income": 42250,
+      "diagnosis": "not recorded",
+      "payment_history": "3 recent claims for treatments the member says she never received"
+    }
+  },
+  "notes": [
+    {
+      "date": "2026-08-11",
+      "source": "agency call center",
+      "text": "Member Jennifer Singer, who goes by Jenny, received bills for treatments she never had. She believes they belong to a different member named Jenny Singer."
+    }
+  ],
+  "ongoing_treatment": false
+}

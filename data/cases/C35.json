@@ -1,0 +1,84 @@
+{
+  "case_id": "C35",
+  "category": "address",
+  "systems": {
+    "agency": {
+      "member_id": "M40000035",
+      "ssn": "935-75-2295",
+      "dob": "1986-08-21",
+      "first_name": "Mateo",
+      "middle_name": "",
+      "last_name": "Silva",
+      "address": {
+        "line1": "220 King Street West",
+        "city": "Toronto",
+        "state": "ON",
+        "zip": "M5H 1K4",
+        "country": "Canada"
+      },
+      "phone": "(555) 010-1035",
+      "email": "mateo.silva35@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-12-31",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Cascadia Health Coverage Program",
+      "household_income": 39750,
+      "diagnosis": "not recorded"
+    },
+    "insurer": {
+      "member_id": "M40000035",
+      "ssn": "935-75-2295",
+      "dob": "1986-08-21",
+      "first_name": "Mateo",
+      "middle_name": "",
+      "last_name": "Silva",
+      "address": {
+        "line1": "135 Maple Street",
+        "city": "Riverton",
+        "state": "CS",
+        "zip": "98001"
+      },
+      "phone": "(555) 010-1035",
+      "email": "mateo.silva35@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-12-31",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Cascadia Health Coverage Program",
+      "household_income": 39750,
+      "diagnosis": "not recorded"
+    },
+    "payment_vendor": {
+      "member_id": "M40000035",
+      "ssn": "935-75-2295",
+      "dob": "1986-08-21",
+      "first_name": "Mateo",
+      "middle_name": "",
+      "last_name": "Silva",
+      "address": {
+        "line1": "135 Maple Street",
+        "city": "Riverton",
+        "state": "CS",
+        "zip": "98001"
+      },
+      "phone": "(555) 010-1035",
+      "email": "mateo.silva35@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-12-31",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Cascadia Health Coverage Program",
+      "household_income": 39750,
+      "diagnosis": "not recorded"
+    }
+  },
+  "notes": [
+    {
+      "date": "2026-06-03",
+      "source": "agency call center",
+      "text": "Member reports relocating to Toronto, Canada for work."
+    }
+  ],
+  "ongoing_treatment": false
+}

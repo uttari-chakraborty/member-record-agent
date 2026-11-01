@@ -1,0 +1,83 @@
+{
+  "case_id": "C22",
+  "category": "job_loss",
+  "systems": {
+    "agency": {
+      "member_id": "M40000022",
+      "ssn": "922-74-1814",
+      "dob": "1991-11-30",
+      "first_name": "Nora",
+      "middle_name": "",
+      "last_name": "Fitzgerald",
+      "address": {
+        "line1": "122 Maple Street",
+        "city": "Riverton",
+        "state": "CS",
+        "zip": "98001"
+      },
+      "phone": "(555) 010-1022",
+      "email": "nora.fitzgerald22@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-12-31",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Employer plan: Coastal Paper Co.",
+      "household_income": 36500,
+      "diagnosis": "not recorded"
+    },
+    "insurer": {
+      "member_id": "M40000022",
+      "ssn": "922-74-1814",
+      "dob": "1991-11-30",
+      "first_name": "Nora",
+      "middle_name": "",
+      "last_name": "Fitzgerald",
+      "address": {
+        "line1": "122 Maple Street",
+        "city": "Riverton",
+        "state": "CS",
+        "zip": "98001"
+      },
+      "phone": "(555) 010-1022",
+      "email": "nora.fitzgerald22@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-12-31",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Cascadia Health Coverage Program",
+      "household_income": 36500,
+      "diagnosis": "not recorded"
+    },
+    "payment_vendor": {
+      "member_id": "M40000022",
+      "ssn": "922-74-1814",
+      "dob": "1991-11-30",
+      "first_name": "Nora",
+      "middle_name": "",
+      "last_name": "Fitzgerald",
+      "address": {
+        "line1": "122 Maple Street",
+        "city": "Riverton",
+        "state": "CS",
+        "zip": "98001"
+      },
+      "phone": "(555) 010-1022",
+      "email": "nora.fitzgerald22@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-12-31",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Cascadia Health Coverage Program",
+      "household_income": 36500,
+      "diagnosis": "not recorded"
+    }
+  },
+  "notes": [
+    {
+      "date": "2026-04-02",
+      "source": "insurer",
+      "text": "Employer reported termination of coverage on 2026-03-31."
+    }
+  ],
+  "ongoing_treatment": false
+}

@@ -1,0 +1,77 @@
+{
+  "case_id": "C07",
+  "category": "name",
+  "systems": {
+    "agency": {
+      "member_id": "M40000007",
+      "ssn": "907-59-1259",
+      "dob": "1948-06-18",
+      "first_name": "Margaret",
+      "middle_name": "",
+      "last_name": "Lindqvist",
+      "address": {
+        "line1": "107 Maple Street",
+        "city": "Riverton",
+        "state": "CS",
+        "zip": "98001"
+      },
+      "phone": "(555) 010-1007",
+      "email": "margaret.lindqvist7@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-12-31",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Cascadia Health Coverage Program",
+      "household_income": 32750,
+      "diagnosis": "not recorded"
+    },
+    "insurer": {
+      "member_id": "M40000007",
+      "ssn": "907-59-1259",
+      "dob": "1948-06-18",
+      "first_name": "Mrgaret",
+      "middle_name": "",
+      "last_name": "Lindqvist",
+      "address": {
+        "line1": "107 Maple Street",
+        "city": "Riverton",
+        "state": "CS",
+        "zip": "98001"
+      },
+      "phone": "(555) 010-1007",
+      "email": "margaret.lindqvist7@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-12-31",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Cascadia Health Coverage Program",
+      "household_income": 32750,
+      "diagnosis": "not recorded"
+    },
+    "payment_vendor": {
+      "member_id": "M40000007",
+      "ssn": "907-59-1259",
+      "dob": "1948-06-18",
+      "first_name": "Margaret",
+      "middle_name": "",
+      "last_name": "Lindqvist",
+      "address": {
+        "line1": "107 Maple Street",
+        "city": "Riverton",
+        "state": "CS",
+        "zip": "98001"
+      },
+      "phone": "(555) 010-1007",
+      "email": "margaret.lindqvist7@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-12-31",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Cascadia Health Coverage Program",
+      "household_income": 32750,
+      "diagnosis": "not recorded"
+    }
+  },
+  "notes": [],
+  "ongoing_treatment": false
+}

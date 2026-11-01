@@ -1,0 +1,83 @@
+{
+  "case_id": "C18",
+  "category": "notes",
+  "systems": {
+    "agency": {
+      "member_id": "M40000018",
+      "ssn": "918-46-1666",
+      "dob": "1977-07-07",
+      "first_name": "Victor",
+      "middle_name": "",
+      "last_name": "Osei",
+      "address": {
+        "line1": "118 Maple Street",
+        "city": "Riverton",
+        "state": "CS",
+        "zip": "98001"
+      },
+      "phone": "(555) 010-1018",
+      "email": "victor.osei18@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-12-31",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Cascadia Health Coverage Program",
+      "household_income": 35500,
+      "diagnosis": "not recorded"
+    },
+    "insurer": {
+      "member_id": "M40000018",
+      "ssn": "918-46-1666",
+      "dob": "1977-07-07",
+      "first_name": "Victor",
+      "middle_name": "",
+      "last_name": "Osei",
+      "address": {
+        "line1": "118 Maple Street",
+        "city": "Riverton",
+        "state": "CS",
+        "zip": "98001"
+      },
+      "phone": "(555) 010-1018",
+      "email": "victor.osei18@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-12-31",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Cascadia Health Coverage Program",
+      "household_income": 35500,
+      "diagnosis": "not recorded"
+    },
+    "payment_vendor": {
+      "member_id": "M40000018",
+      "ssn": "918-46-1666",
+      "dob": "1977-07-07",
+      "first_name": "Victor",
+      "middle_name": "",
+      "last_name": "Osei",
+      "address": {
+        "line1": "118 Maple Street",
+        "city": "Riverton",
+        "state": "CS",
+        "zip": "98001"
+      },
+      "phone": "555-010-1018",
+      "email": "victor.osei18@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-12-31",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Cascadia Health Coverage Program",
+      "household_income": 35500,
+      "diagnosis": "not recorded"
+    }
+  },
+  "notes": [
+    {
+      "date": "2025-10-02",
+      "source": "agency call center",
+      "text": "Member mentioned an old address at 9 Elm Court; records were updated afterwards."
+    }
+  ],
+  "ongoing_treatment": false
+}

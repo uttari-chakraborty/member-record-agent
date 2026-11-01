@@ -1,0 +1,83 @@
+{
+  "case_id": "C02",
+  "category": "address",
+  "systems": {
+    "agency": {
+      "member_id": "M40000002",
+      "ssn": "902-24-1074",
+      "dob": "1988-11-02",
+      "first_name": "Marcus",
+      "middle_name": "",
+      "last_name": "Bell",
+      "address": {
+        "line1": "102 Maple Street",
+        "city": "Riverton",
+        "state": "CS",
+        "zip": "98001"
+      },
+      "phone": "(555) 010-1002",
+      "email": "marcus.bell2@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-12-31",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Cascadia Health Coverage Program",
+      "household_income": 31500,
+      "diagnosis": "not recorded"
+    },
+    "insurer": {
+      "member_id": "M40000002",
+      "ssn": "902-24-1074",
+      "dob": "1988-11-02",
+      "first_name": "Marcus",
+      "middle_name": "",
+      "last_name": "Bell",
+      "address": {
+        "line1": "19 Harbor Road",
+        "city": "Fairview",
+        "state": "CS",
+        "zip": "98022"
+      },
+      "phone": "(555) 010-1002",
+      "email": "marcus.bell2@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-12-31",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Cascadia Health Coverage Program",
+      "household_income": 31500,
+      "diagnosis": "not recorded"
+    },
+    "payment_vendor": {
+      "member_id": "M40000002",
+      "ssn": "902-24-1074",
+      "dob": "1988-11-02",
+      "first_name": "Marcus",
+      "middle_name": "",
+      "last_name": "Bell",
+      "address": {
+        "line1": "102 Maple Street",
+        "city": "Riverton",
+        "state": "CS",
+        "zip": "98001"
+      },
+      "phone": "(555) 010-1002",
+      "email": "marcus.bell2@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-12-31",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Cascadia Health Coverage Program",
+      "household_income": 31500,
+      "diagnosis": "not recorded"
+    }
+  },
+  "notes": [
+    {
+      "date": "2026-04-10",
+      "source": "insurer portal",
+      "text": "Member updated mailing address to 19 Harbor Road, Fairview through the insurer portal."
+    }
+  ],
+  "ongoing_treatment": false
+}

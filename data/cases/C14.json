@@ -1,0 +1,83 @@
+{
+  "case_id": "C14",
+  "category": "coverage_dates",
+  "systems": {
+    "agency": {
+      "member_id": "M40000014",
+      "ssn": "914-18-1518",
+      "dob": "1987-01-19",
+      "first_name": "Omar",
+      "middle_name": "",
+      "last_name": "Haddad",
+      "address": {
+        "line1": "114 Maple Street",
+        "city": "Riverton",
+        "state": "CS",
+        "zip": "98001"
+      },
+      "phone": "(555) 010-1014",
+      "email": "omar.haddad14@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-12-31",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Cascadia Health Coverage Program",
+      "household_income": 34500,
+      "diagnosis": "not recorded"
+    },
+    "insurer": {
+      "member_id": "M40000014",
+      "ssn": "914-18-1518",
+      "dob": "1987-01-19",
+      "first_name": "Omar",
+      "middle_name": "",
+      "last_name": "Haddad",
+      "address": {
+        "line1": "114 Maple Street",
+        "city": "Riverton",
+        "state": "CS",
+        "zip": "98001"
+      },
+      "phone": "(555) 010-1014",
+      "email": "omar.haddad14@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-12-31",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Cascadia Health Coverage Program",
+      "household_income": 34500,
+      "diagnosis": "not recorded"
+    },
+    "payment_vendor": {
+      "member_id": "M40000014",
+      "ssn": "914-18-1518",
+      "dob": "1987-01-19",
+      "first_name": "Omar",
+      "middle_name": "",
+      "last_name": "Haddad",
+      "address": {
+        "line1": "114 Maple Street",
+        "city": "Riverton",
+        "state": "CS",
+        "zip": "98001"
+      },
+      "phone": "(555) 010-1014",
+      "email": "omar.haddad14@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-03-31",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Cascadia Health Coverage Program",
+      "household_income": 34500,
+      "diagnosis": "not recorded"
+    }
+  },
+  "notes": [
+    {
+      "date": "2026-03-20",
+      "source": "agency renewals",
+      "text": "Renewal received on time and approved."
+    }
+  ],
+  "ongoing_treatment": false
+}

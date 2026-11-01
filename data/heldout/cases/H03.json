@@ -1,0 +1,88 @@
+{
+  "case_id": "H03",
+  "category": "heldout",
+  "systems": {
+    "agency": {
+      "member_id": "M40000043",
+      "ssn": "943-41-2591",
+      "dob": "1969-06-23",
+      "first_name": "Grace",
+      "middle_name": "",
+      "last_name": "Holloway",
+      "address": {
+        "line1": "143 Maple Street",
+        "city": "Riverton",
+        "state": "CS",
+        "zip": "98001"
+      },
+      "phone": "(555) 010-1043",
+      "email": "grace.holloway43@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-12-31",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Cascadia Health Coverage Program",
+      "household_income": 41750,
+      "diagnosis": "not recorded"
+    },
+    "insurer": {
+      "member_id": "M40000043",
+      "ssn": "943-41-2591",
+      "dob": "1969-06-23",
+      "first_name": "Grace",
+      "middle_name": "",
+      "last_name": "Holloway",
+      "address": {
+        "line1": "143 Maple Street",
+        "city": "Riverton",
+        "state": "CS",
+        "zip": "98001"
+      },
+      "phone": "(555) 010-1043",
+      "email": "grace.holloway43@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-06-30",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Cascadia Health Coverage Program",
+      "household_income": 41750,
+      "diagnosis": "not recorded"
+    },
+    "payment_vendor": {
+      "member_id": "M40000043",
+      "ssn": "943-41-2591",
+      "dob": "1969-06-23",
+      "first_name": "Grace",
+      "middle_name": "",
+      "last_name": "Holloway",
+      "address": {
+        "line1": "143 Maple Street",
+        "city": "Riverton",
+        "state": "CS",
+        "zip": "98001"
+      },
+      "phone": "(555) 010-1043",
+      "email": "grace.holloway43@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-06-30",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Cascadia Health Coverage Program",
+      "household_income": 41750,
+      "diagnosis": "not recorded"
+    }
+  },
+  "notes": [
+    {
+      "date": "2026-04-10",
+      "source": "agency call center",
+      "text": "Member reports a temporary move to Nevada for 2-3 months to care for a parent; advised coverage continues if she returns within 3 months."
+    },
+    {
+      "date": "2026-07-08",
+      "source": "agency call center",
+      "text": "Member has returned to Riverton; her coverage now shows as ended on 2026-06-30."
+    }
+  ],
+  "ongoing_treatment": true
+}

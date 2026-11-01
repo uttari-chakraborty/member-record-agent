@@ -1,0 +1,83 @@
+{
+  "case_id": "C28",
+  "category": "divorce",
+  "systems": {
+    "agency": {
+      "member_id": "M40000028",
+      "ssn": "928-26-2036",
+      "dob": "1966-12-01",
+      "first_name": "Paul",
+      "middle_name": "",
+      "last_name": "Jensen",
+      "address": {
+        "line1": "128 Maple Street",
+        "city": "Riverton",
+        "state": "CS",
+        "zip": "98001"
+      },
+      "phone": "(555) 010-1028",
+      "email": "paul.jensen28@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-12-31",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Cascadia Health Coverage Program",
+      "household_income": 38000,
+      "diagnosis": "not recorded"
+    },
+    "insurer": {
+      "member_id": "M40000028",
+      "ssn": "928-26-2036",
+      "dob": "1966-12-01",
+      "first_name": "Paul",
+      "middle_name": "",
+      "last_name": "Jensen",
+      "address": {
+        "line1": "128 Maple Street",
+        "city": "Riverton",
+        "state": "CS",
+        "zip": "98001"
+      },
+      "phone": "(555) 010-1028",
+      "email": "Paul.Jensen28@Example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-12-31",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Cascadia Health Coverage Program",
+      "household_income": 38000,
+      "diagnosis": "not recorded"
+    },
+    "payment_vendor": {
+      "member_id": "M40000028",
+      "ssn": "928-26-2036",
+      "dob": "1966-12-01",
+      "first_name": "Paul",
+      "middle_name": "",
+      "last_name": "Jensen",
+      "address": {
+        "line1": "128 Maple Street",
+        "city": "Riverton",
+        "state": "CS",
+        "zip": "98001"
+      },
+      "phone": "(555) 010-1028",
+      "email": "paul.jensen28@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-12-31",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Cascadia Health Coverage Program",
+      "household_income": 38000,
+      "diagnosis": "not recorded"
+    }
+  },
+  "notes": [
+    {
+      "date": "2025-12-10",
+      "source": "agency call center",
+      "text": "Member divorced in 2025; coverage updated to self in all systems."
+    }
+  ],
+  "ongoing_treatment": false
+}

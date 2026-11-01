@@ -1,0 +1,83 @@
+{
+  "case_id": "C04",
+  "category": "address",
+  "systems": {
+    "agency": {
+      "member_id": "M40000004",
+      "ssn": "904-38-1148",
+      "dob": "1959-01-30",
+      "first_name": "Thomas",
+      "middle_name": "",
+      "last_name": "Greer",
+      "address": {
+        "line1": "77 Desert Willow Drive",
+        "city": "Reno",
+        "state": "NV",
+        "zip": "89501"
+      },
+      "phone": "(555) 010-1004",
+      "email": "thomas.greer4@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-12-31",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Cascadia Health Coverage Program",
+      "household_income": 32000,
+      "diagnosis": "not recorded"
+    },
+    "insurer": {
+      "member_id": "M40000004",
+      "ssn": "904-38-1148",
+      "dob": "1959-01-30",
+      "first_name": "Thomas",
+      "middle_name": "",
+      "last_name": "Greer",
+      "address": {
+        "line1": "104 Maple Street",
+        "city": "Riverton",
+        "state": "CS",
+        "zip": "98001"
+      },
+      "phone": "(555) 010-1004",
+      "email": "thomas.greer4@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-12-31",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Cascadia Health Coverage Program",
+      "household_income": 32000,
+      "diagnosis": "not recorded"
+    },
+    "payment_vendor": {
+      "member_id": "M40000004",
+      "ssn": "904-38-1148",
+      "dob": "1959-01-30",
+      "first_name": "Thomas",
+      "middle_name": "",
+      "last_name": "Greer",
+      "address": {
+        "line1": "104 Maple Street",
+        "city": "Riverton",
+        "state": "CS",
+        "zip": "98001"
+      },
+      "phone": "(555) 010-1004",
+      "email": "thomas.greer4@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-12-31",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Cascadia Health Coverage Program",
+      "household_income": 32000,
+      "diagnosis": "not recorded"
+    }
+  },
+  "notes": [
+    {
+      "date": "2026-05-06",
+      "source": "agency call center",
+      "text": "Member reports moving to Nevada to live with family."
+    }
+  ],
+  "ongoing_treatment": false
+}

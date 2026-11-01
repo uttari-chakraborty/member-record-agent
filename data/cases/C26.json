@@ -1,0 +1,83 @@
+{
+  "case_id": "C26",
+  "category": "divorce",
+  "systems": {
+    "agency": {
+      "member_id": "M40000026",
+      "ssn": "926-12-1962",
+      "dob": "1983-06-06",
+      "first_name": "Kevin",
+      "middle_name": "",
+      "last_name": "Shah",
+      "address": {
+        "line1": "126 Maple Street",
+        "city": "Riverton",
+        "state": "CS",
+        "zip": "98001"
+      },
+      "phone": "(555) 010-1026",
+      "email": "kevin.shah26@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-12-31",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Cascadia Health Coverage Program",
+      "household_income": 37500,
+      "diagnosis": "not recorded"
+    },
+    "insurer": {
+      "member_id": "M40000026",
+      "ssn": "926-12-1962",
+      "dob": "1983-06-06",
+      "first_name": "Kevin",
+      "middle_name": "",
+      "last_name": "Shah",
+      "address": {
+        "line1": "126 Maple Street",
+        "city": "Riverton",
+        "state": "CS",
+        "zip": "98001"
+      },
+      "phone": "(555) 010-1026",
+      "email": "kevin.shah26@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-12-31",
+      "eligibility_status": "active",
+      "coverage_type": "dependent",
+      "primary_payer": "Employer plan: Delta Labs (spouse)",
+      "household_income": 37500,
+      "diagnosis": "not recorded"
+    },
+    "payment_vendor": {
+      "member_id": "M40000026",
+      "ssn": "926-12-1962",
+      "dob": "1983-06-06",
+      "first_name": "Kevin",
+      "middle_name": "",
+      "last_name": "Shah",
+      "address": {
+        "line1": "126 Maple Street",
+        "city": "Riverton",
+        "state": "CS",
+        "zip": "98001"
+      },
+      "phone": "(555) 010-1026",
+      "email": "kevin.shah26@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-12-31",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Cascadia Health Coverage Program",
+      "household_income": 37500,
+      "diagnosis": "not recorded"
+    }
+  },
+  "notes": [
+    {
+      "date": "2026-04-18",
+      "source": "agency call center",
+      "text": "Member says he and his wife separated; unsure whether he is still on her plan."
+    }
+  ],
+  "ongoing_treatment": false
+}

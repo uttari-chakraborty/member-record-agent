@@ -1,0 +1,88 @@
+{
+  "case_id": "H08",
+  "category": "heldout",
+  "systems": {
+    "agency": {
+      "member_id": "M40000048",
+      "ssn": "948-76-2776",
+      "dob": "1993-01-05",
+      "first_name": "Sana",
+      "middle_name": "",
+      "last_name": "Dada",
+      "address": {
+        "line1": "148 Maple Street",
+        "city": "Riverton",
+        "state": "CS",
+        "zip": "98001"
+      },
+      "phone": "(555) 010-1048",
+      "email": "sana.dadda05@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-12-31",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Cascadia Health Coverage Program",
+      "household_income": 43000,
+      "diagnosis": "not recorded"
+    },
+    "insurer": {
+      "member_id": "M40000048",
+      "ssn": "948-76-2776",
+      "dob": "1993-01-05",
+      "first_name": "Sana",
+      "middle_name": "",
+      "last_name": "Dada",
+      "address": {
+        "line1": "148 Maple Street",
+        "city": "Riverton",
+        "state": "CS",
+        "zip": "98001"
+      },
+      "phone": "(555) 010-1048",
+      "email": "sana.dada48@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-12-31",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Cascadia Health Coverage Program",
+      "household_income": 43000,
+      "diagnosis": "not recorded"
+    },
+    "payment_vendor": {
+      "member_id": "M40000048",
+      "ssn": "948-76-2776",
+      "dob": "1993-01-05",
+      "first_name": "Sana",
+      "middle_name": "",
+      "last_name": "Dada",
+      "address": {
+        "line1": "148 Maple Street",
+        "city": "Riverton",
+        "state": "CS",
+        "zip": "98001"
+      },
+      "phone": "(555) 010-1048",
+      "email": "sana.dada48@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-12-31",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Cascadia Health Coverage Program",
+      "household_income": 43000,
+      "diagnosis": "not recorded"
+    }
+  },
+  "notes": [
+    {
+      "date": "2026-05-02",
+      "source": "agency call center",
+      "text": "Member (SSN 948-76-2776, ID M40000048, DOB 01/05/1993) confirmed a new email: sana.dadda05@example.com."
+    },
+    {
+      "date": "2026-05-03",
+      "source": "agency call center",
+      "text": "Member called back: yesterday's email had a typo. The correct email is sana.dada05@example.com."
+    }
+  ],
+  "ongoing_treatment": false
+}

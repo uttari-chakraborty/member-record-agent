@@ -1,0 +1,84 @@
+{
+  "case_id": "H07",
+  "category": "heldout",
+  "systems": {
+    "agency": {
+      "member_id": "M40000047",
+      "ssn": "947-69-2739",
+      "dob": "1958-05-30",
+      "first_name": "Irene",
+      "middle_name": "",
+      "last_name": "Kowalski",
+      "address": {
+        "line1": "147 Maple Street",
+        "city": "Riverton",
+        "state": "CS",
+        "zip": "98001"
+      },
+      "phone": "(555) 010-1047",
+      "email": "irene.kowalski47@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-08-30",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Cascadia Health Coverage Program",
+      "household_income": 42750,
+      "diagnosis": "not recorded"
+    },
+    "insurer": {
+      "member_id": "M40000047",
+      "ssn": "947-69-2739",
+      "dob": "1958-05-30",
+      "first_name": "Irene",
+      "middle_name": "",
+      "last_name": "Kowalski",
+      "address": {
+        "line1": "147 Maple Street",
+        "city": "Riverton",
+        "state": "CS",
+        "zip": "98001"
+      },
+      "phone": "(555) 010-1047",
+      "email": "irene.kowalski47@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-08-30",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Cascadia Health Coverage Program",
+      "household_income": 42750,
+      "diagnosis": "not recorded"
+    },
+    "payment_vendor": {
+      "member_id": "M40000047",
+      "ssn": "947-69-2739",
+      "dob": "1958-05-30",
+      "first_name": "Irene",
+      "middle_name": "",
+      "last_name": "Kowalski",
+      "address": {
+        "line1": "147 Maple Street",
+        "city": "Riverton",
+        "state": "CS",
+        "zip": "98001"
+      },
+      "phone": "(555) 010-1047",
+      "email": "irene.kowalski47@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-12-31",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Cascadia Health Coverage Program",
+      "household_income": 42750,
+      "diagnosis": "not recorded",
+      "payment_history": "Claim for a visit on 2026-09-05 paid by the program"
+    }
+  },
+  "notes": [
+    {
+      "date": "2026-09-12",
+      "source": "payment vendor",
+      "text": "Flagged: a claim for 2026-09-05 was paid, after the coverage end date of 2026-08-30."
+    }
+  ],
+  "ongoing_treatment": false
+}

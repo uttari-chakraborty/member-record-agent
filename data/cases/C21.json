@@ -1,0 +1,89 @@
+{
+  "case_id": "C21",
+  "category": "job_loss",
+  "systems": {
+    "agency": {
+      "member_id": "M40000021",
+      "ssn": "921-67-1777",
+      "dob": "1968-08-08",
+      "first_name": "Samuel",
+      "middle_name": "",
+      "last_name": "Price",
+      "address": {
+        "line1": "121 Maple Street",
+        "city": "Riverton",
+        "state": "CS",
+        "zip": "98001"
+      },
+      "phone": "(555) 010-1021",
+      "email": "samuel.price21@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-12-31",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Cascadia Health Coverage Program",
+      "household_income": 36250,
+      "diagnosis": "not recorded"
+    },
+    "insurer": {
+      "member_id": "M40000021",
+      "ssn": "921-67-1777",
+      "dob": "1968-08-08",
+      "first_name": "Samuel",
+      "middle_name": "",
+      "last_name": "Price",
+      "address": {
+        "line1": "121 Maple Street",
+        "city": "Riverton",
+        "state": "CS",
+        "zip": "98001"
+      },
+      "phone": "(555) 010-1021",
+      "email": "samuel.price21@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-12-31",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Employer plan: Northwind Logistics",
+      "household_income": 36250,
+      "diagnosis": "not recorded"
+    },
+    "payment_vendor": {
+      "member_id": "M40000021",
+      "ssn": "921-67-1777",
+      "dob": "1968-08-08",
+      "first_name": "Samuel",
+      "middle_name": "",
+      "last_name": "Price",
+      "address": {
+        "line1": "121 Maple Street",
+        "city": "Riverton",
+        "state": "CS",
+        "zip": "98001"
+      },
+      "phone": "(555) 010-1021",
+      "email": "samuel.price21@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-12-31",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Cascadia Health Coverage Program",
+      "household_income": 36250,
+      "diagnosis": "not recorded",
+      "payment_history": "3 recent clinic claims denied: another plan listed as primary"
+    }
+  },
+  "notes": [
+    {
+      "date": "2026-02-14",
+      "source": "agency call center",
+      "text": "Member lost his job; employer coverage ended 2026-02-28."
+    },
+    {
+      "date": "2026-03-05",
+      "source": "clinic liaison",
+      "text": "Member is in ongoing treatment."
+    }
+  ],
+  "ongoing_treatment": true
+}

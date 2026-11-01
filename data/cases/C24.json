@@ -1,0 +1,89 @@
+{
+  "case_id": "C24",
+  "category": "job_loss",
+  "systems": {
+    "agency": {
+      "member_id": "M40000024",
+      "ssn": "924-88-1888",
+      "dob": "1960-10-10",
+      "first_name": "Beth",
+      "middle_name": "",
+      "last_name": "Morales",
+      "address": {
+        "line1": "31 Willow Way",
+        "city": "Lakeport",
+        "state": "CS",
+        "zip": "98014"
+      },
+      "phone": "(555) 010-1024",
+      "email": "beth.morales24@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-12-31",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Cascadia Health Coverage Program",
+      "household_income": 37000,
+      "diagnosis": "not recorded"
+    },
+    "insurer": {
+      "member_id": "M40000024",
+      "ssn": "924-88-1888",
+      "dob": "1960-10-10",
+      "first_name": "Beth",
+      "middle_name": "",
+      "last_name": "Morales",
+      "address": {
+        "line1": "124 Maple Street",
+        "city": "Riverton",
+        "state": "CS",
+        "zip": "98001"
+      },
+      "phone": "(555) 010-1024",
+      "email": "beth.morales24@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-12-31",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Employer plan: Riverton Steel",
+      "household_income": 37000,
+      "diagnosis": "not recorded"
+    },
+    "payment_vendor": {
+      "member_id": "M40000024",
+      "ssn": "924-88-1888",
+      "dob": "1960-10-10",
+      "first_name": "Beth",
+      "middle_name": "",
+      "last_name": "Morales",
+      "address": {
+        "line1": "124 Maple Street",
+        "city": "Riverton",
+        "state": "CS",
+        "zip": "98001"
+      },
+      "phone": "(555) 010-1024",
+      "email": "beth.morales24@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-12-31",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Cascadia Health Coverage Program",
+      "household_income": 37000,
+      "diagnosis": "not recorded",
+      "payment_history": "3 recent clinic claims denied: another plan listed as primary"
+    }
+  },
+  "notes": [
+    {
+      "date": "2026-03-11",
+      "source": "agency call center",
+      "text": "Member lost her job at the steel plant; coverage ended 2026-02-28. She moved to 31 Willow Way, Lakeport."
+    },
+    {
+      "date": "2026-03-15",
+      "source": "clinic liaison",
+      "text": "Member is in ongoing treatment with clinic visits three times a week."
+    }
+  ],
+  "ongoing_treatment": true
+}

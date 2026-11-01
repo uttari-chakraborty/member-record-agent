@@ -1,0 +1,83 @@
+{
+  "case_id": "C01",
+  "category": "address",
+  "systems": {
+    "agency": {
+      "member_id": "M40000001",
+      "ssn": "901-17-1037",
+      "dob": "1971-03-14",
+      "first_name": "Dana",
+      "middle_name": "",
+      "last_name": "Whitfield",
+      "address": {
+        "line1": "88 Cedar Avenue",
+        "city": "Lakeport",
+        "state": "CS",
+        "zip": "98014"
+      },
+      "phone": "(555) 010-1001",
+      "email": "dana.whitfield1@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-12-31",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Cascadia Health Coverage Program",
+      "household_income": 31250,
+      "diagnosis": "not recorded"
+    },
+    "insurer": {
+      "member_id": "M40000001",
+      "ssn": "901-17-1037",
+      "dob": "1971-03-14",
+      "first_name": "Dana",
+      "middle_name": "",
+      "last_name": "Whitfield",
+      "address": {
+        "line1": "101 Maple Street",
+        "city": "Riverton",
+        "state": "CS",
+        "zip": "98001"
+      },
+      "phone": "(555) 010-1001",
+      "email": "dana.whitfield1@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-12-31",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Cascadia Health Coverage Program",
+      "household_income": 31250,
+      "diagnosis": "not recorded"
+    },
+    "payment_vendor": {
+      "member_id": "M40000001",
+      "ssn": "901-17-1037",
+      "dob": "1971-03-14",
+      "first_name": "Dana",
+      "middle_name": "",
+      "last_name": "Whitfield",
+      "address": {
+        "line1": "101 Maple Street",
+        "city": "Riverton",
+        "state": "CS",
+        "zip": "98001"
+      },
+      "phone": "(555) 010-1001",
+      "email": "dana.whitfield1@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-12-31",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Cascadia Health Coverage Program",
+      "household_income": 31250,
+      "diagnosis": "not recorded"
+    }
+  },
+  "notes": [
+    {
+      "date": "2026-03-02",
+      "source": "agency call center",
+      "text": "Member called to report a move to 88 Cedar Avenue, Lakeport. Same county."
+    }
+  ],
+  "ongoing_treatment": false
+}

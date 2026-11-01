@@ -1,0 +1,90 @@
+{
+  "case_id": "H02",
+  "category": "heldout",
+  "systems": {
+    "agency": {
+      "member_id": "M40000042",
+      "ssn": "942-34-2554",
+      "dob": "2026-01-01",
+      "first_name": "Noah",
+      "middle_name": "",
+      "last_name": "Ferris",
+      "address": {
+        "line1": "142 Maple Street",
+        "city": "Riverton",
+        "state": "CS",
+        "zip": "98001"
+      },
+      "phone": "(555) 010-1042",
+      "email": "noah.ferris42@example.com",
+      "coverage_start": "2026-01-01",
+      "coverage_end": "2026-12-31",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Cascadia Health Coverage Program",
+      "household_income": 41500,
+      "diagnosis": "not recorded"
+    },
+    "insurer": {
+      "member_id": "M40000042",
+      "ssn": "942-34-2554",
+      "dob": "2026-01-01",
+      "first_name": "Noah",
+      "middle_name": "",
+      "last_name": "Ferris",
+      "address": {
+        "line1": "142 Maple Street",
+        "city": "Riverton",
+        "state": "CS",
+        "zip": "98001"
+      },
+      "phone": "(555) 010-1042",
+      "email": "noah.ferris42@example.com",
+      "coverage_start": "2026-01-15",
+      "coverage_end": "2026-12-31",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Cascadia Health Coverage Program",
+      "household_income": 41500,
+      "diagnosis": "not recorded"
+    },
+    "payment_vendor": {
+      "member_id": "M40000042",
+      "ssn": "942-34-2554",
+      "dob": "2026-01-01",
+      "first_name": "Noah",
+      "middle_name": "",
+      "last_name": "Ferris",
+      "address": {
+        "line1": "142 Maple Street",
+        "city": "Riverton",
+        "state": "CS",
+        "zip": "98001"
+      },
+      "phone": "(555) 010-1042",
+      "email": "noah.ferris42@example.com",
+      "coverage_start": "2026-01-15",
+      "coverage_end": "2026-12-31",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Cascadia Health Coverage Program",
+      "household_income": 41500,
+      "diagnosis": "not recorded",
+      "payment_history": "Clinic visit on 2026-01-05 denied as not covered; family billed out of pocket"
+    }
+  },
+  "notes": [
+    {
+      "date": "2026-01-15",
+      "source": "agency call center",
+      "text": "Mother added her newborn, born 2026-01-01, to her case."
+    },
+    {
+      "date": "2026-01-28",
+      "source": "agency call center",
+      "text": "Mother called about a bill for the baby's visit on 2026-01-05; she was told newborns are covered from birth for 30 days."
+    }
+  ],
+  "ongoing_treatment": false,
+  "dob_needed_for_decision": "Birthdate shown: newborn coverage starts on the date of birth."
+}

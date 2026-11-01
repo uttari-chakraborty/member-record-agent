@@ -1,0 +1,11 @@
+case_id,category,expected_action,expected_urgent,expected_corrections,why,expected_policy
+H01,COBRA after divorce,escalate,yes,,"COBRA keeps her ex-spouse's plan valid, so the insurer is right and the others are stale; which plan pays first needs a caseworker.",4.2|4.3
+H02,Newborn,escalate,no,,"The newborn is covered from birth under the 30-day rule, so the bill was wrong; fixing coverage dates and reprocessing the claim needs a caseworker.",3.2
+H03,Temporary move out of state,escalate,yes,,"She followed the agency's guidance for a temporary move, but coverage was ended anyway; restoring it is an eligibility and coverage-dates decision.",2.3|4.1
+H04,Wrong employer end date,escalate,no,,The wrong employer end date made a private plan look active and caused a denied claim; correcting it and reprocessing claims needs a caseworker.,4.3
+H05,Jennifer vs. Jenny,escalate,no,,"Two different members share the name 'Jenny', and Jennifer received another member's bills; an automatic name change could make the mix-up worse.",5.1
+H06,Medicare starts in the future,escalate,yes,,"Medicare's start date is in the future, so claims went to Medicare too early; routing them back changes which plan pays first.",4.3
+H07,Claims paid after coverage ended,escalate,no,,"The payment vendor paid a claim after coverage ended, so the records disagree; recovering payments is a billing decision and the agent can never bill a member.",4.1
+H08,Contradictory notes,auto_correct,no,agency.email;insurer.email;payment_vendor.email,"The later note corrects a typo in the earlier one; email is low risk and the corrected value is in a note, so every system should use the newest value.",2.1
+H09,"DOB format, unambiguous",no_action,no,,"Same date in two formats, and unambiguous because there is no month 16. Expected to fail at first: masking hides the format from the agent.",
+H10,"DOB format, ambiguous",escalate,no,,"01/06/2015 could be January 6 or June 1, so the records can't show it is the same birthdate; identity needs a person.",5.1

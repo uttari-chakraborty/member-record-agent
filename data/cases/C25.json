@@ -1,0 +1,94 @@
+{
+  "case_id": "C25",
+  "category": "divorce",
+  "systems": {
+    "agency": {
+      "member_id": "M40000025",
+      "ssn": "925-95-1925",
+      "dob": "1968-04-12",
+      "first_name": "Rosa",
+      "middle_name": "",
+      "last_name": "Delgado",
+      "address": {
+        "line1": "56 Aspen Court",
+        "city": "Lakeport",
+        "state": "CS",
+        "zip": "98014"
+      },
+      "phone": "(555) 010-1025",
+      "email": "rosa.delgado25@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-12-31",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Cascadia Health Coverage Program",
+      "household_income": 37250,
+      "diagnosis": "not recorded"
+    },
+    "insurer": {
+      "member_id": "M40000025",
+      "ssn": "925-95-1925",
+      "dob": "1968-04-12",
+      "first_name": "Rosa",
+      "middle_name": "",
+      "last_name": "Delgado",
+      "address": {
+        "line1": "125 Maple Street",
+        "city": "Riverton",
+        "state": "CS",
+        "zip": "98001"
+      },
+      "phone": "(555) 010-1025",
+      "email": "rosa.delgado25@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-12-31",
+      "eligibility_status": "active",
+      "coverage_type": "dependent",
+      "primary_payer": "Employer plan: Harbor Shipping (spouse)",
+      "household_income": 37250,
+      "diagnosis": "not recorded"
+    },
+    "payment_vendor": {
+      "member_id": "M40000025",
+      "ssn": "925-95-1925",
+      "dob": "1968-04-12",
+      "first_name": "Rosa",
+      "middle_name": "",
+      "last_name": "Delgado",
+      "address": {
+        "line1": "125 Maple Street",
+        "city": "Riverton",
+        "state": "CS",
+        "zip": "98001"
+      },
+      "phone": "(555) 010-1025",
+      "email": "rosa.delgado25@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-12-31",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Cascadia Health Coverage Program",
+      "household_income": 37250,
+      "diagnosis": "not recorded",
+      "payment_history": "3 recent clinic claims denied: another plan listed as primary"
+    }
+  },
+  "notes": [
+    {
+      "date": "2026-01-22",
+      "source": "agency call center",
+      "text": "Member reports divorce finalized in January; she was on her ex-husband's employer plan."
+    },
+    {
+      "date": "2026-03-09",
+      "source": "agency call center",
+      "text": "Member moved to 56 Aspen Court, Lakeport."
+    },
+    {
+      "date": "2026-03-12",
+      "source": "clinic liaison",
+      "text": "Member is in ongoing treatment with clinic visits three times a week."
+    }
+  ],
+  "ongoing_treatment": true
+}

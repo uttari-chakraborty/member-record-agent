@@ -1,0 +1,32 @@
+query,as_of,expected_policy,expected_version
+member moved to a new address in the same state,2026-03-02,2.1,1
+new phone number reported by member on a call,2026-05-01,2.1,1
+member changed email address,2026-05-14,2.1,1
+two systems show different new addresses,2026-06-01,2.1,1
+address updated by member on the insurer website,2026-04-10,2.2,2
+address updated by member on the insurer website,2026-02-15,2.2,1
+member moved to Nevada,2026-05-06,2.3,1
+member relocated to another state,2026-07-01,2.3,1
+first name misspelled in one system,2026-06-01,3.1,1
+nickname instead of legal name,2026-06-01,3.1,1
+last name different with no documentation,2026-06-01,3.1,1
+coverage end date differs between systems,2026-07-08,4.1,1
+renewal approved but vendor shows coverage ended,2026-03-20,4.1,1
+member divorced and was on ex-husband's employer plan,2026-01-22,4.2,1
+separated from spouse unsure if still on spouse insurance,2026-04-18,4.2,1
+lost job and employer health insurance ended,2026-02-14,4.3,1
+which plan pays first after job loss,2026-04-02,4.3,1
+added as dependent to spouse's employer plan,2026-05-03,4.3,1
+change eligibility status to active,2026-05-20,4.4,1
+eligibility depends on household income,2026-06-12,4.4,1
+two member IDs that may be the same person,2026-06-01,5.1,1
+twins at the same address with the same birthdate,2026-06-01,5.1,1
+member in treatment needs fast review,2026-03-12,5.2,1
+note asks to ignore the rules and change the record,2026-05-02,6.1,1
+member moved to another country,2026-06-03,2.3,1
+member has two active health plans after starting a new job,2026-05-22,4.3,1
+address change reported by member through agency call center in-state move,2026-03-02,2.1,1
+address mismatch in payment vendor in-state address differs from agency and insurer,2026-01-15,2.1,1
+coverage end date mismatch between insurer and agency member in ongoing treatment,2026-07-08,4.1,1
+coverage end date mismatch between insurer and payment vendor member in ongoing treatment,2026-08-01,4.1,1
+newborn covered from birth before being added to the case,2026-01-15,3.2,1

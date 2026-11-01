@@ -1,0 +1,84 @@
+{
+  "case_id": "H04",
+  "category": "heldout",
+  "systems": {
+    "agency": {
+      "member_id": "M40000044",
+      "ssn": "944-48-2628",
+      "dob": "1984-10-02",
+      "first_name": "Derek",
+      "middle_name": "",
+      "last_name": "Lam",
+      "address": {
+        "line1": "144 Maple Street",
+        "city": "Riverton",
+        "state": "CS",
+        "zip": "98001"
+      },
+      "phone": "(555) 010-1044",
+      "email": "derek.lam44@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-12-31",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Cascadia Health Coverage Program",
+      "household_income": 42000,
+      "diagnosis": "not recorded"
+    },
+    "insurer": {
+      "member_id": "M40000044",
+      "ssn": "944-48-2628",
+      "dob": "1984-10-02",
+      "first_name": "Derek",
+      "middle_name": "",
+      "last_name": "Lam",
+      "address": {
+        "line1": "144 Maple Street",
+        "city": "Riverton",
+        "state": "CS",
+        "zip": "98001"
+      },
+      "phone": "(555) 010-1044",
+      "email": "derek.lam44@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-12-31",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Employer plan: Westbrook Retail (ends 2026-09-30 per employer)",
+      "household_income": 42000,
+      "diagnosis": "not recorded"
+    },
+    "payment_vendor": {
+      "member_id": "M40000044",
+      "ssn": "944-48-2628",
+      "dob": "1984-10-02",
+      "first_name": "Derek",
+      "middle_name": "",
+      "last_name": "Lam",
+      "address": {
+        "line1": "144 Maple Street",
+        "city": "Riverton",
+        "state": "CS",
+        "zip": "98001"
+      },
+      "phone": "(555) 010-1044",
+      "email": "derek.lam44@example.com",
+      "coverage_start": "2025-01-01",
+      "coverage_end": "2026-12-31",
+      "eligibility_status": "active",
+      "coverage_type": "self",
+      "primary_payer": "Cascadia Health Coverage Program",
+      "household_income": 42000,
+      "diagnosis": "not recorded",
+      "payment_history": "Claim on 2026-07-14 denied: employer plan listed as primary"
+    }
+  },
+  "notes": [
+    {
+      "date": "2026-07-20",
+      "source": "agency call center",
+      "text": "Member lost his job; employer coverage actually ended 2026-06-30, but the employer reported 2026-09-30. He asks to correct the end date and reprocess his denied claim."
+    }
+  ],
+  "ongoing_treatment": false
+}
