@@ -2,6 +2,8 @@
 
 > I took the hardest part of a data problem I worked on at Deloitte and asked whether Claude could handle it safely. Here's what I found, here's where it failed, and here's how I'd pilot it with an agency.
 
+Personal project, built on my own time with synthetic data. Not affiliated with or endorsed by Deloitte, any state agency, or Amazon. The design, code, data and policy manual are my own and don't reflect any client's systems.
+
 **Status:** prototype on synthetic data.
 
 **Results at a glance**
