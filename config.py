@@ -43,6 +43,11 @@ SOURCE_OF_TRUTH = {
 # --- What the agent may change (enforced in code, not just the prompt) -------
 AUTO_CORRECT_FIELDS = {"address", "first_name", "middle_name", "last_name", "phone", "email"}
 
+# High-risk fields the agent may PROPOSE (never apply) with an escalation. A
+# caseworker approves or rejects each proposal; only then does code apply it.
+# v1: which plan pays first, and nothing that touches coverage dates or type.
+PROPOSABLE_FIELDS = {"primary_payer"}
+
 # Fields the agent's role can never see. Identifiers are replaced by match
 # results; restricted fields are left out entirely.
 IDENTIFIER_FIELDS = {"ssn", "member_id", "dob"}

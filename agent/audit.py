@@ -12,6 +12,18 @@ class AuditLog:
     def __init__(self, path):
         self.path = path
         self.last_hash = "start"
+        # Appending to an existing log (e.g. a caseworker approval after the run)
+        # must continue the chain, not restart it.
+        try:
+            with open(path, encoding="utf-8") as f:
+                last = None
+                for line in f:
+                    if line.strip():
+                        last = line.rstrip("\n")
+            if last is not None:
+                self.last_hash = hashlib.sha256(last.encode()).hexdigest()
+        except FileNotFoundError:
+            pass
 
     def write(self, case_id, actor, event, detail):
         entry = {

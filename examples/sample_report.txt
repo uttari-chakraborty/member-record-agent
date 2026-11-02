@@ -23,10 +23,15 @@ Exact corrections:        7 of 7 correct auto-corrections changed exactly the ex
 Safe fix before escalating: 2 of 2 escalated cases that also needed a safe fix got exactly that fix
 Unexpected changes:       0 case run(s) changed a field the label didn't expect (any action, including escalations)
 Urgent flagged by Claude: 5 of 5 (code makes every treatment case urgent regardless)
-Policy found by agent:    29 of 30 cases searched up the expected policy section
-Policy cited:             22 of 23 escalations cited the expected policy section
+Policy found by agent:    30 of 30 cases searched up the expected policy section
+Policy cited:             23 of 23 escalations cited the expected policy section
 Sent back for citation:   0 time(s) in 0 case(s)
 Inconsistent cases:       none
 Audit log intact:         yes
-Tokens:                   298,188 in / 28,411 out
+Tokens:                   359,383 in / 30,745 out
 Expected -> actual: auto_correct->auto_correct: 7, escalate->escalate: 23, no_action->no_action: 6
+Proposals:                5 group(s) (5 system change(s)) in 5 escalated case run(s); 0 dropped by code checks; none applied without a caseworker
+Proposals matching label: 4 of 5 case run(s) where the label or the agent has a proposal
+Unexpected proposals (check these by hand):
+  C25 run 1 (divorce): proposed insurer.primary_payer
+Pending approval: python approve.py results\pending_20261101_200051_claude-sonnet-5-5.json

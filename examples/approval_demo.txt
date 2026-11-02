@@ -1,0 +1,17 @@
+Approval demo: a real proposal from the agent (case C22), then two decisions.
+The agent proposed the change; it cannot approve it. Only a named caseworker can.
+
+> python approve.py results/pending_20261101_193209_claude-sonnet-5-5.json C22 G1 --approve --by agent
+Refused: a named caseworker must decide; the agent and the system cannot
+
+> python approve.py results/pending_20261101_193209_claude-sonnet-5-5.json C22 G1 --approve --by cw-demo-01
+C22 run 1 G1 [approved] primary_payer -> 'Cascadia Health Coverage Program'
+    agency: 'Employer plan: Coastal Paper Co.'
+    evidence (insurer): The insurer, the source of truth for primary payer, lists the Cascadia program as primary.
+    evidence (payment_vendor): The payment vendor also lists the Cascadia program as primary.
+    evidence (note:1): The employer reported coverage termination effective 2026-03-31.
+    confirm before approving: Verify directly with Coastal Paper Co. or its carrier that the employer coverage actually terminated on 2026-03-31 and no other plan is active.
+    decided by cw-demo-01 at 2026-11-02T03:41:19.886325+00:00
+
+The decision is appended to the run's tamper-evident audit log with cw-demo-01 as the actor.
+cw-demo-01 is a synthetic caseworker ID; a pilot needs real sign-in through the agency's login system.

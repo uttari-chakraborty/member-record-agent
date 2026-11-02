@@ -291,6 +291,27 @@ EXPECTED_POLICY = {
 for row in LABELS:
     row["expected_policy"] = EXPECTED_POLICY[row["case_id"]]
 
+# Prepared resolutions: the change the agent should propose (never apply) for a
+# caseworker to approve, and why, in plain words. Blank = no proposal expected.
+EXPECTED_PROPOSALS = {
+    "C21": "insurer.primary_payer", "C22": "agency.primary_payer", "C23": "payment_vendor.primary_payer",
+    "C24": "insurer.primary_payer",
+}
+PROPOSAL_WHY = {
+    "C19": "No proposal: with two active plans, a caseworker decides who pays first.",
+    "C21": "The employer plan ended 2026-02-28, so propose the state program as the insurer's first payer.",
+    "C22": "Employer reported coverage ended; the agency record still lists the employer plan as paying first, so propose the state program.",
+    "C23": "The job ended in December; the payment vendor still lists the employer plan first, so propose the state program.",
+    "C24": "The employer plan ended 2026-02-28; the insurer still bills it first, so propose the state program.",
+    "C25": "No proposal: the divorce is documented, but no note says her coverage on her ex-husband's plan ended; after a divorce it can continue (for example through COBRA), so a caseworker must confirm first.",
+    "C26": "No proposal: whether he is still on his wife's plan is too uncertain.",
+    "C36": "No proposal: with two active plans, a caseworker decides who pays first.",
+}
+for row in LABELS:
+    if row["case_id"] in PROPOSAL_WHY:
+        row["why"] = f"{row['why']} {PROPOSAL_WHY[row['case_id']]}"
+    row["expected_proposals"] = EXPECTED_PROPOSALS.get(row["case_id"], "")
+
 
 def main():
     os.makedirs(CASES_DIR, exist_ok=True)

@@ -90,16 +90,25 @@ def corrections_key(result):
     return ";".join(sorted(f"{c['system']}.{c['field']}" for c in result["corrections"]))
 
 
+def proposals_key(result):
+    """Proposed (not applied) changes, as system.field. Kept apart from corrections_key on purpose:
+    proposals never count as changes until a caseworker approves them."""
+    groups = (result.get("escalation") or {}).get("proposed_changes") or []
+    return ";".join(sorted(f"{c['system']}.{g['field']}" for g in groups for c in g["changes"]))
+
+
 def score_model(model, cases, labels, runs, client, mock, outdir, stamp):
     audit_path = os.path.join(outdir, f"audit_{stamp}_{model}.jsonl")
     audit = AuditLog(audit_path)
-    rows = []
+    rows, pending = [], []
     for case in cases:
         for r in range(runs):
             result, sent_text, usage = run_case(case, audit, model=model, client=client, mock=mock)
             lab = labels[case["case_id"]]
             leaks = masking.find_leaks(sent_text, case)
             esc = result["escalation"] or {}
+            if result.get("pending_resolution"):
+                pending.append({**result["pending_resolution"], "run": r + 1})
             rows.append({
                 "model": model, "run": r + 1, "case_id": case["case_id"], "category": lab["category"],
                 "expected": lab["expected_action"], "actual": result["action"],
@@ -120,10 +129,15 @@ def score_model(model, cases, labels, runs, client, mock, outdir, stamp):
                 "citation_sendbacks": result.get("citation_sendbacks", 0),
                 "summary": esc.get("summary", (result["closed"] or {}).get("reason", "")),
                 "input_tokens": usage["input_tokens"], "output_tokens": usage["output_tokens"],
+                "expected_proposals": lab.get("expected_proposals") or "",
+                "actual_proposals": proposals_key(result),
+                "proposal_groups": len(esc.get("proposed_changes") or []),
+                "proposals_dropped": result.get("proposals_dropped", []),
+                "confirm_present": all(g.get("confirm_before_approving") for g in esc.get("proposed_changes") or []),
             })
             mark = "ok " if rows[-1]["correct"] else "MISS"
             print(f"  [{mark}] {model} run {r + 1} {case['case_id']}: expected {lab['expected_action']}, got {result['action']}")
-    return rows, audit_path
+    return rows, audit_path, pending
 
 
 def report(rows, model, runs, audit_ok):
@@ -197,9 +211,40 @@ def report(rows, model, runs, audit_ok):
         lines.append("Unexpected changes (check these by hand):")
         for r in unexpected_rows:
             lines.append(f"  {r['case_id']} run {r['run']} ({r['category']}, {r['actual']}): changed {', '.join(_extra(r))}")
+    lines += _proposal_lines(rows)
     return "\n".join(lines), {"model": model, "accuracy": acc, "critical": crit, "over": over,
                               "consistent": len(by_case) - len(inconsistent), "cases": len(by_case),
                               "cost_per_case": (cost / len(rows)) if cost is not None else None}
+
+
+def _proposal_lines(rows):
+    """Proposals are pending, not applied, so they are reported here and never in 'Unexpected changes'."""
+    def keys(s):
+        return set(filter(None, s.split(";")))
+    prop_rows = [r for r in rows if r["actual_proposals"]]
+    groups = sum(r["proposal_groups"] for r in rows)
+    changes = sum(len(keys(r["actual_proposals"])) for r in rows)
+    dropped = [(r, d) for r in rows for d in r["proposals_dropped"]]
+    scored = [r for r in rows if r["expected_proposals"] or r["actual_proposals"]]
+    matched = sum(keys(r["expected_proposals"]) == keys(r["actual_proposals"]) for r in scored)
+    missed = [r for r in rows if r["expected_proposals"] and not r["actual_proposals"]]
+    extra = [(r, sorted(keys(r["actual_proposals"]) - keys(r["expected_proposals"]))) for r in rows]
+    extra = [(r, e) for r, e in extra if e]
+    lines = [
+        f"Proposals:                {groups} group(s) ({changes} system change(s)) in {len(prop_rows)} escalated case run(s); "
+        f"{len(dropped)} dropped by code checks; none applied without a caseworker",
+        f"Proposals matching label: {matched} of {len(scored)} case run(s) where the label or the agent has a proposal",
+    ]
+    if missed:
+        lines.append("Missed proposals:")
+        lines += [f"  {r['case_id']} run {r['run']}: expected {r['expected_proposals']}, got none" for r in missed]
+    if extra:
+        lines.append("Unexpected proposals (check these by hand):")
+        lines += [f"  {r['case_id']} run {r['run']} ({r['category']}): proposed {', '.join(e)}" for r, e in extra]
+    if dropped:
+        lines.append("Dropped proposals:")
+        lines += [f"  {r['case_id']} run {r['run']}: {d}" for r, d in dropped]
+    return lines
 
 
 def main():
@@ -233,8 +278,13 @@ def main():
 
     all_rows, summaries, texts = [], [], [retrieval_text]
     for model in models:
-        rows, audit_path = score_model(model, cases, labels, args.runs, client, args.mock, outdir, stamp)
+        rows, audit_path, pending = score_model(model, cases, labels, args.runs, client, args.mock, outdir, stamp)
         text, summ = report(rows, model, args.runs, verify(audit_path))
+        if pending:
+            pending_path = os.path.join(outdir, f"pending_{stamp}_{model}.json")
+            with open(pending_path, "w", encoding="utf-8") as f:
+                json.dump({"model": model, "resolutions": pending}, f, indent=2, default=str)
+            text += f"\nPending approval: python approve.py {os.path.relpath(pending_path, ROOT)}"
         print(text)
         texts.append(text)
         summaries.append(summ)

@@ -11,6 +11,8 @@
 - **Model comparison:** the smaller model made the same decisions for about a seventeenth of the cost, once a code check made it cite its policies.
 - **10 held-out cases I never designed for:** 90%, zero critical errors. The one miss was the one I predicted.
 
+Step through every decision: [interactive replay](https://claude.ai/artifact/7UrzMHhVbo275VcXJknCyh)
+
 The most useful findings were the failures; see section 4.
 
 ---
@@ -41,6 +43,7 @@ The most useful findings were the failures; see section 4.
 
 - As a caseworker, I get a summary with sources, so I can decide in minutes instead of investigating for hours.
 - As a caseworker, I see the urgent cases first, so members in treatment aren't left waiting.
+- As a caseworker, I get the exact change the agent recommends, with its evidence and what to confirm, so I can approve or reject it in one step instead of making the edit myself.
 - As an auditor, I can see every change the agent made and why, so I can trust it.
 - As a member, my address and contact details are fixed without me having to call.
 
@@ -55,6 +58,8 @@ Each requirement passes or fails on specific test cases; the success metrics bel
 | Auto-correct only low-risk fields | Corrections touch only in-state address, name, phone or email, and only to a value already in a record or note; anything else is rejected and escalated | Address, name and phone cases, C31 (out of role), `tests/` |
 | No unexpected changes | No field is changed that the case didn't call for, including in cases that end in an escalation | Every case, on every run (added after held-out case H05) |
 | Escalations explain themselves | Every escalation has a summary, and every reason cites the record, note or policy it came from | All escalated cases; summaries spot-checked |
+| Prepared resolutions | The agent can only propose a change, never apply one, and only for which plan pays first (`primary_payer`). Each proposal covers every system that needs that field changed, cites at least one record or note, and says in one sentence what the caseworker should confirm before approving. A proposal that fails a check is dropped and logged, and the escalation still goes through | C21–C24 (proposal expected), C19, C25, C26, C36 (none: two active plans, an unconfirmed end of coverage, or too uncertain), `tests/` |
+| One-step approval | Approval applies exactly the proposed change, all systems for that field together, and nothing else, and is refused if the record changed since the proposal. Rejection needs a reason and changes nothing. Both are logged with the caseworker as the actor | `tests/`, `approve.py` |
 | Urgent cases flagged | Every escalated case with ongoing treatment is marked urgent | C13, C15, C21, C24, C25 |
 | PII masked | No SSN, member ID or date of birth appears in Claude's input or any summary, except one documented case where the decision depends on the birthdate | C33 (PII in a note), held-out H02 (newborn), plus a scan on every run |
 | Role limits enforced | A request outside the agent's role is blocked, logged and escalated | C31, C32 (hidden field) |
@@ -76,12 +81,14 @@ Each requirement passes or fails on specific test cases; the success metrics bel
 | Same answer across 3 runs | Track and explain differences | Prototype evals |
 | Right policy in the top 5 search results | Track; report misses | Retrieval eval, no Claude needed |
 | Escalations citing the right policy | Track | Prototype evals |
+| Proposals matching the label (right systems, no extras) | Track; check unexpected proposals by hand | Prototype evals |
 | Time to resolve a hard case | From weeks to days | Pilot only; a prototype can't measure it |
 
 **Risks and open questions**
 
 - A confident but wrong summary could mislead a caseworker; mitigated by citing sources and evaluating summaries.
 - A stale source of truth: the agent must escalate conflicts, not sync them.
+- A prepared change could be approved without being checked; mitigated by the required "confirm before approving" sentence, and in a pilot by comparing approvals with what caseworkers would have done on their own.
 - What an agency would need to approve it: an environment approved for health data, a Business Associate Agreement, and an authorization to operate.
 
 ## 2. How it works
@@ -97,7 +104,9 @@ Each requirement passes or fails on specific test cases; the success metrics bel
    - An escalation that doesn't cite a policy is sent back once; if it still doesn't, the case goes to a caseworker anyway.
    - Any blocked attempt, or an agent that doesn't finish, sends the case to a caseworker.
    - Members in ongoing treatment are always marked urgent.
-5. **Every step is logged** (`agent/audit.py`): an append-only log where each entry carries the hash of the one before it, so edits are detectable.
+   - A proposed change is checked (allowed field, value already in a record or note, a real change, evidence, the confirm sentence) and stored as pending. It never changes a record.
+5. **A caseworker approves or rejects prepared changes** (`agent/approvals.py`, `approve.py`): an escalation can carry the exact `primary_payer` change the agent recommends. Proposals are grouped by field: one group covers every system and is approved or rejected as a whole. Approval applies exactly that group. Rejection needs a reason. The agent has no tool for either.
+6. **Every step is logged** (`agent/audit.py`): an append-only log where each entry carries the hash of the one before it, so edits are detectable. Caseworker decisions are appended to the same log with the caseworker as the actor.
 
 ## 3. The test set
 
@@ -116,7 +125,7 @@ Each requirement passes or fails on specific test cases; the success metrics bel
 | Dual coverage: two active plans | 1 |
 | Policy changed between the event and today | 1 |
 
-Expected actions: 6 no action, 7 auto-correct, 23 escalate.
+Expected actions: 6 no action, 7 auto-correct, 23 escalate. Expected proposals: 4 escalations should carry a `primary_payer` proposal (C21–C24). Four payer cases should not: C19 and C36 because two plans are active, C25 because no note says her coverage on her ex-husband's plan ended and after a divorce it can continue (for example through COBRA), and C26 because the evidence is too uncertain.
 
 **Held-out set:** 10 cases (`data/heldout/`) I wrote from my own experience after the agent was built, without changing its instructions: COBRA after a divorce, a newborn billed before being added, a temporary move out of state, an employer reporting the wrong end date, two members who share a nickname, Medicare starting in the future, claims paid after coverage ended, contradictory notes, and the same birthdate written in two formats, once unambiguous and once ambiguous. Before running them, I wrote down which ones I expected to fail and why.
 
@@ -126,7 +135,7 @@ Every person, address and number is invented; SSNs use the never-issued 9xx rang
 
 ## 4. Results
 
-Measured against the bar in section 1 (also in `config.py`). Larger model: Claude Sonnet. Smaller model: Claude Haiku. The full report from the final run, plus four individual decisions, is in [`examples/`](examples/).
+Measured against the bar in section 1 (also in `config.py`). Larger model: Claude Sonnet. Smaller model: Claude Haiku. The full report from the final run, plus five individual decisions and [an approval demo](examples/approval_demo.txt), is in [`examples/`](examples/).
 
 **Main set, final run (36 cases, larger model)**
 
@@ -139,9 +148,13 @@ Measured against the bar in section 1 (also in `config.py`). Larger model: Claud
 | Unexpected changes | 0 | — |
 | Auto-corrections that changed exactly the right fields | 7 of 7 | — |
 | Escalated cases that also got the safe fix first | 2 of 2 | — |
-| Right policy found / cited in escalations | 29 of 30 / 22 of 23 | — |
+| Right policy found / cited in escalations | 30 of 30 / 23 of 23 | — |
 | Escalation rate | 64% (23 of 36 cases need a person by policy) | — |
-| Cost | About $0.88 for 36 cases | — |
+| Cost | About $1.03 for 36 cases | — |
+| Prepared fixes made where the label expects one | 4 of 4 (C21–C24) | — |
+| Prepared fixes dropped by code checks / applied without a caseworker | 0 / 0 | — |
+
+In this run the agent also prepared a fix for C25, whose label says none; its check asks the caseworker to confirm that her coverage on her ex-husband's plan ended, so it is safe, but C25 is borderline (prepared in one run, not in another), and the label stays.
 
 **Every run**
 
@@ -153,6 +166,7 @@ Measured against the bar in section 1 (also in `config.py`). Larger model: Claud
 | Larger model, with the citation check | 100% | 0 | Cited the policy in 23 of 23 without help |
 | Held-out, 10 cases, before fixes | **90%** | 0 | One predicted miss (H09) and one privacy flag (H02) |
 | Held-out, after fixes | 100% | 0 | No privacy flags. These cases are now regression tests, so **90% is the generalization number** |
+| Held-out, with prepared fixes | 100% | 0 | No PII leaks; policy found 9 of 9, cited 8 of 8. H01 (COBRA) correctly got no prepared fix; H04 got a payer fix whose check asks the caseworker to confirm the real end date first; H05 still changed the name (known issue, failure 7); H06 is failure 10 |
 
 **Retrieval alone (no Claude):** the right policy ranked first for 23 of 31 questions, in the top 3 for 25 and in the top 5, which is what the agent sees, for 30.
 
@@ -166,6 +180,8 @@ Measured against the bar in section 1 (also in `config.py`). Larger model: Claud
 6. **You can't mask the fact a decision depends on (H02).** For a newborn, the coverage start date is the birth date. Instead of pretending to hide it, I made a narrow, documented exception for that case type.
 7. **My eval was wrong (H05).** A member said bills under "Jenny" belonged to a different member. The agent correctly escalated, but first changed the record's name from "Jenny" to "Jennifer". Policy allows correcting a nickname, but editing a name during an identity investigation changes the evidence the caseworker needs. The eval only checked changes in auto-correct cases, so it scored 100%. I fixed the eval first; it now flags any change that wasn't expected. The agent fix waits for fresh cases (see section 7).
 8. **Known gap, logged (C11, H10).** Two birthdate cases made the right decision but missed the identity policy, because the manual says "identifiers" and Claude searched for "date of birth". Same root cause as failure 2: keyword search needs exact words.
+9. **A proposal label was wrong (C25).** After the first proposal run I changed C25 to expect no proposal: the divorce is documented, but no note says her coverage on her ex-husband's plan ended, and after a divorce it can continue (for example through COBRA), so a caseworker must confirm before anything is proposed.
+10. **A prepared fix that starts in the future (H06), not fixed.** In October the agent prepared a fix copying "Medicare (effective 2026-12-01)" into the agency and payment vendor records. Approved as is, claims could go to Medicare too early, the very problem the member called about. Nothing was applied, and its check told the caseworker to keep the program primary until then. Root cause: one field can't hold a change with a start date. I didn't fix it because H06 is held-out; the planned fix is for proposals to carry an effective date, tested on new cases.
 
 **What I'd take from this:** score the evidence, not just the action; run more than once; test on cases you didn't design for; and when the score is perfect, check what the eval isn't measuring.
 
@@ -177,6 +193,7 @@ Measured against the bar in section 1 (also in `config.py`). Larger model: Claud
 4. **Success metrics:** zero critical errors, time to resolve hard cases, caseworker hours saved, member complaints.
 5. **Stop conditions:** any critical error on coverage, or accuracy below the bar for two weeks in a row.
 6. **Go-live path:** low-risk corrections first, the audit log reviewed weekly, then expand one case type at a time.
+7. **Approver sign-in:** in the prototype, the approver is a typed, synthetic caseworker ID. A pilot needs real sign-in through the agency's login system, so every approval and rejection is tied to an authenticated caseworker.
 
 ## 6. Who built what
 
@@ -184,9 +201,10 @@ I made the product decisions: the problem, the three actions, what the agent may
 
 ## 7. Next
 
+- **Prepared fixes with an effective date** (from H06), so a change that starts later waits for its start date; tested on new cases.
 - **Freeze the record during identity review** (from H05), tested on fresh cases rather than the held-out set.
 - **A new held-out set,** since the first one has become regression tests.
-- **One-click approval for caseworkers:** the agent prepares the exact change, a caseworker approves it.
+- **One-click approval for caseworkers:** done in the prototype for `primary_payer` (section 2, step 5). Next: real sign-in for approvers, and deciding whether other fields should be proposable.
 - **Hybrid search** (keywords plus embeddings) to close the vocabulary gaps.
 - **A benefits renewal checker,** ranking the caseworker queue by care impact, and a shadow-mode pilot.
 
@@ -249,4 +267,11 @@ python eval.py --runs 3                  # consistency
 python eval.py --models claude-haiku-5-5,claude-sonnet-5-5   # model comparison
 ```
 
-Results go to `results/`: a readable report, every case's result, and the audit log. To see output without running anything, open [`examples/`](examples/). Check current model names at docs.claude.com and update `config.py` if needed. Never commit `.env`; it's already in `.gitignore`.
+**Approve or reject a prepared change** (after a run that produced proposals)
+```
+python approve.py results/pending_<stamp>_<model>.json                     # list what is waiting
+python approve.py results/pending_<stamp>_<model>.json C21 G1 --approve --by cw-demo-01
+python approve.py results/pending_<stamp>_<model>.json C21 G1 --reject --by cw-demo-01 --reason "Employer has not confirmed the end date"
+```
+
+Results go to `results/`: a readable report, every case's result, and the audit log. To see output without running anything, open [`examples/`](examples/), including [an approval demo](examples/approval_demo.txt). Check current model names at docs.claude.com and update `config.py` if needed. Never commit `.env`; it's already in `.gitignore`.
