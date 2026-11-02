@@ -1,0 +1,32 @@
+
+=== Retrieval (search only, no Claude) ===
+Right policy ranked first:   23 of 31
+Right policy in top 3:       25 of 31  (recall at 3)
+Right policy in top 5:       30 of 31  (recall at 5, what the agent sees)
+Not ranked first:
+  'member moved to a new address in the same state' (2026-03-02): expected policy:2.1 v1, got ['policy:2.3 v1', 'policy:2.1 v1', 'policy:5.1 v1']
+  'member moved to Nevada' (2026-05-06): expected policy:2.3 v1, got ['policy:3.2 v1', 'policy:5.2 v1', 'policy:4.3 v1']
+  'added as dependent to spouse's employer plan' (2026-05-03): expected policy:4.3 v1, got ['policy:4.2 v1', 'policy:4.3 v1', 'policy:3.2 v1']
+  'note asks to ignore the rules and change the record' (2026-05-02): expected policy:6.1 v1, got ['policy:4.1 v1', 'policy:2.1 v1', 'policy:1.1 v1']
+  'address change reported by member through agency call center in-state move' (2026-03-02): expected policy:2.1 v1, got ['policy:2.2 v1', 'policy:2.3 v1', 'policy:1.1 v1']
+  'address mismatch in payment vendor in-state address differs from agency and insurer' (2026-01-15): expected policy:2.1 v1, got ['policy:2.2 v1', 'policy:1.1 v1', 'policy:2.3 v1']
+  'coverage end date mismatch between insurer and agency member in ongoing treatment' (2026-07-08): expected policy:4.1 v1, got ['policy:5.2 v1', 'policy:4.2 v1', 'policy:1.1 v1']
+  'coverage end date mismatch between insurer and payment vendor member in ongoing treatment' (2026-08-01): expected policy:4.1 v1, got ['policy:5.2 v1', 'policy:1.1 v1', 'policy:4.2 v1']
+
+=== claude-sonnet-5-5: 36 cases x 1 run(s) ===
+Action accuracy:          100%   (bar: at least 90%)  PASS
+Critical errors:          0      (bar: 0)  PASS
+Over-escalations:         0      (bar: at most 3 across all runs)  PASS
+PII leaks:                0      (bar: 0)  PASS
+Escalation rate:          64%
+Exact corrections:        7 of 7 correct auto-corrections changed exactly the expected fields
+Safe fix before escalating: 2 of 2 escalated cases that also needed a safe fix got exactly that fix
+Unexpected changes:       0 case run(s) changed a field the label didn't expect (any action, including escalations)
+Urgent flagged by Claude: 5 of 5 (code makes every treatment case urgent regardless)
+Policy found by agent:    29 of 30 cases searched up the expected policy section
+Policy cited:             22 of 23 escalations cited the expected policy section
+Sent back for citation:   0 time(s) in 0 case(s)
+Inconsistent cases:       none
+Audit log intact:         yes
+Tokens:                   298,188 in / 28,411 out
+Expected -> actual: auto_correct->auto_correct: 7, escalate->escalate: 23, no_action->no_action: 6

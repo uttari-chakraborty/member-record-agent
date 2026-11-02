@@ -5,6 +5,7 @@
 **Status:** prototype on synthetic data.
 
 **Results at a glance**
+
 - **Main test set (36 cases):** every decision right, with zero critical errors, zero leaks of private data and zero unneeded escalations.
 - **Consistency:** the same 36 cases run three times, 108 decisions. One mistake, in the safe direction: an unneeded review.
 - **Model comparison:** the smaller model made the same decisions for about a seventeenth of the cost, once a code check made it cite its policies.
@@ -125,7 +126,7 @@ Every person, address and number is invented; SSNs use the never-issued 9xx rang
 
 ## 4. Results
 
-Measured against the bar in section 1 (also in `config.py`). Larger model: Claude Sonnet. Smaller model: Claude Haiku.
+Measured against the bar in section 1 (also in `config.py`). Larger model: Claude Sonnet. Smaller model: Claude Haiku. The full report from the final run, plus four individual decisions, is in [`examples/`](examples/).
 
 **Main set, final run (36 cases, larger model)**
 
@@ -248,4 +249,4 @@ python eval.py --runs 3                  # consistency
 python eval.py --models claude-haiku-5-5,claude-sonnet-5-5   # model comparison
 ```
 
-Results go to `results/`: a readable report, every case's result, and the audit log. Check current model names at docs.claude.com and update `config.py` if needed. Never commit `.env`; it's already in `.gitignore`.
+Results go to `results/`: a readable report, every case's result, and the audit log. To see output without running anything, open [`examples/`](examples/). Check current model names at docs.claude.com and update `config.py` if needed. Never commit `.env`; it's already in `.gitignore`.
