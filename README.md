@@ -15,7 +15,7 @@ Personal project, built on my own time with synthetic data. Not affiliated with 
 
 Step through every decision: [interactive replay](https://claude.ai/artifact/7UrzMHhVbo275VcXJknCyh)
 
-The most useful findings were the failures; see section 4.
+The most useful findings were the issues testing caught; see section 4.
 
 ---
 
@@ -168,20 +168,20 @@ In this run the agent also prepared a fix for C25, whose label says none; its ch
 | Larger model, with the citation check | 100% | 0 | Cited the policy in 23 of 23 without help |
 | Held-out, 10 cases, before fixes | **90%** | 0 | One predicted miss (H09) and one privacy flag (H02) |
 | Held-out, after fixes | 100% | 0 | No privacy flags. These cases are now regression tests, so **90% is the generalization number** |
-| Held-out, with prepared fixes | 100% | 0 | No PII leaks; policy found 9 of 9, cited 8 of 8. H01 (COBRA) correctly got no prepared fix; H04 got a payer fix whose check asks the caseworker to confirm the real end date first; H05 still changed the name (known issue, failure 7); H06 is failure 10 |
+| Held-out, with prepared fixes | 100% | 0 | No PII leaks; policy found 9 of 9, cited 8 of 8. H01 (COBRA) correctly got no prepared fix; H04 got a payer fix whose check asks the caseworker to confirm the real end date first; H05 still changed the name (known issue, see issue 7); H06 is issue 10 |
 
 **Retrieval alone (no Claude):** the right policy ranked first for 23 of 31 questions, in the top 3 for 25 and in the top 5, which is what the agent sees, for 30.
 
-**Failures and what I changed**
+**What testing caught, and what I changed**
 
-1. **Right for the wrong reason (C34).** The agent correctly escalated an address change reported through the insurer portal, but never found the policy that applied: its search was too vague, so the right section ranked fourth. I changed the search instructions to include who reported the change and through which channel, which fixed C34, but the full re-run showed four other cases slipping. That's how I found the next failure.
+1. **Right for the wrong reason (C34).** The agent correctly escalated an address change reported through the insurer portal, but never found the policy that applied: its search was too vague, so the right section ranked fourth. I changed the search instructions to include who reported the change and through which channel, which fixed C34, but the full re-run showed four other cases slipping. That's how I found the next issue.
 2. **My retrieval test didn't reflect reality.** I'd written the test questions in the manual's own words; Claude phrases things differently, and keyword search needs exact words. I turned Claude's four failing searches into permanent tests and widened the results from 3 to 5, which fixed all four without hurting the rest.
 3. **The smaller model didn't cite its policies.** It made the same decisions as the larger model but named the governing policy in only 18 of 23 escalations, which matters when an auditor asks why. Instead of paying for the bigger model, I added a code check that sends back any escalation without a policy citation: 23 of 23 on the re-run.
 4. **One flip in 108 decisions (C28), left unfixed.** A member whose divorce was already updated everywhere, with only an email capitalization difference, was escalated in one of three runs. The error went in the safe direction, and coaching that caution away could make the agent miss real divorce cases.
 5. **Privacy masking hid a formatting difference (H09).** The agent never sees birthdates, so 01/16/2015 vs. 16/01/2015 looked like "differ" and it escalated. The fix was to compare dates in code, not to show the agent the birthdate. 01/06/2015 vs. 06/01/2015 (H10) is genuinely ambiguous, January 6 or June 1, and still goes to a person.
 6. **You can't mask the fact a decision depends on (H02).** For a newborn, the coverage start date is the birth date. Instead of pretending to hide it, I made a narrow, documented exception for that case type.
 7. **My eval was wrong (H05).** A member said bills under "Jenny" belonged to a different member. The agent correctly escalated, but first changed the record's name from "Jenny" to "Jennifer". Policy allows correcting a nickname, but editing a name during an identity investigation changes the evidence the caseworker needs. The eval only checked changes in auto-correct cases, so it scored 100%. I fixed the eval first; it now flags any change that wasn't expected. The agent fix waits for fresh cases (see section 7).
-8. **Known gap, logged (C11, H10).** Two birthdate cases made the right decision but missed the identity policy, because the manual says "identifiers" and Claude searched for "date of birth". Same root cause as failure 2: keyword search needs exact words.
+8. **Known gap, logged (C11, H10).** Two birthdate cases made the right decision but missed the identity policy, because the manual says "identifiers" and Claude searched for "date of birth". Same root cause as issue 2: keyword search needs exact words.
 9. **A proposal label was wrong (C25).** After the first proposal run I changed C25 to expect no proposal: the divorce is documented, but no note says her coverage on her ex-husband's plan ended, and after a divorce it can continue (for example through COBRA), so a caseworker must confirm before anything is proposed.
 10. **A prepared fix that starts in the future (H06), not fixed.** In October the agent prepared a fix copying "Medicare (effective 2026-12-01)" into the agency and payment vendor records. Approved as is, claims could go to Medicare too early, the very problem the member called about. Nothing was applied, and its check told the caseworker to keep the program primary until then. Root cause: one field can't hold a change with a start date. I didn't fix it because H06 is held-out; the planned fix is for proposals to carry an effective date, tested on new cases.
 
