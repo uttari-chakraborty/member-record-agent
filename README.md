@@ -12,6 +12,7 @@ Personal project, built on my own time with synthetic data. Not affiliated with 
 - **Consistency:** the same 36 cases run three times, 108 decisions. One mistake, in the safe direction: an unneeded review.
 - **Model comparison:** the smaller model made the same decisions for about a seventeenth of the cost, once a code check made it cite its policies.
 - **10 held-out cases I never designed for:** 90%, zero critical errors. The one miss was the one I predicted.
+- **Prepared fixes:** in the final run, the agent prepared the exact change in all 4 cases where one was expected, and code applied nothing without a named caseworker's approval.
 
 Step through every decision: [interactive replay](https://claude.ai/artifact/7UrzMHhVbo275VcXJknCyh)
 
@@ -199,14 +200,14 @@ In this run the agent also prepared a fix for C25, whose label says none; its ch
 
 ## 6. Who built what
 
-I made the product decisions: the problem, the three actions, what the agent may never do, the sources of truth, the test cases and their labels, the held-out cases, and the bar. Claude wrote most of the code; I ran every eval, read the results, decided what to fix and what to leave, and debugged it on my own machine.
+I made the product decisions: the problem, the three actions, what the agent may never do, the sources of truth, the test cases and their labels, the held-out cases, and the bar. Claude wrote most of the code: the first version in chat, and the prepared-fix feature with Claude Code in my repo. I set its limits before it started, in `CLAUDE.md` and `.claude/settings.json`: no access to the API key, no pushing, no commits without asking, no paid eval runs, and no changing the instructions to pass a held-out case. I reviewed each change before approving it. I ran every eval, read the results, decided what to fix and what to leave, and debugged it on my own machine.
 
 ## 7. Next
 
 - **Prepared fixes with an effective date** (from H06), so a change that starts later waits for its start date; tested on new cases.
 - **Freeze the record during identity review** (from H05), tested on fresh cases rather than the held-out set.
 - **A new held-out set,** since the first one has become regression tests.
-- **One-click approval for caseworkers:** done in the prototype for `primary_payer` (section 2, step 5). Next: real sign-in for approvers, and deciding whether other fields should be proposable.
+- **Approvals:** real sign-in for caseworkers, and deciding whether fields other than `primary_payer` should be proposable.
 - **Hybrid search** (keywords plus embeddings) to close the vocabulary gaps.
 - **A benefits renewal checker,** ranking the caseworker queue by care impact, and a shadow-mode pilot.
 
